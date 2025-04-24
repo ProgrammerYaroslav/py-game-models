@@ -9,7 +9,7 @@ class Race(models.Model):
         ("Ork", "Ork")
     )
     name = models.CharField(max_length=255, choices=races, unique=True)
-    description = models.TextField(blank=True)
+    description = models.TextField(null=True, blank=True)
 
 
 class Skill(models.Model):
@@ -20,7 +20,7 @@ class Skill(models.Model):
 
 class Guild(models.Model):
     name = models.CharField(unique=True, max_length=255)
-    description = models.TextField(null=True)
+    description = models.TextField(null=True, blank=True)
 
 
 class Player(models.Model):
